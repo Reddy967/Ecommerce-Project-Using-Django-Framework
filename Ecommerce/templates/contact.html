@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Us{% endblock title %}
+{% block main-content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<section class="section" id="contact">
+    <form action="" name="contactForm" method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div class="contact-box">
+            <div class="left"></div>
+            <div class="right">
+                <h2>Contact me</h2>
+                <input type="text" class="field" placeholder="Your Name" name="name">
+                <input type="text" class="field" placeholder="Your Email" name="email">
+                <input type="text" class="field" placeholder="Phone" name="phone">
+                <textarea placeholder="Message" class="field" name="message"></textarea>
+                <button class="btn">Send</button>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock main-content %}
